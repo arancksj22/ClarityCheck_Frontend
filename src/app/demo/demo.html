@@ -1,0 +1,37 @@
+<section id="demo" class="demo">
+  <h2>Demo Analysis</h2>
+  <div class="tabs">
+    <button [class.active]="mode() === 'text'" (click)="setMode('text')">Text</button>
+    <button [class.active]="mode() === 'pdf'" (click)="setMode('pdf')">PDF</button>
+  </div>
+
+  <div class="panel" *ngIf="mode() === 'text'">
+    <textarea [ngModel]="inputText()" (ngModelChange)="inputText.set($event)" placeholder="Paste your research paragraph here..." rows="8"></textarea>
+    <button class="button primary" (click)="runTextAnalysis()" [disabled]="loading()">{{ loading() ? 'Analyzing…' : 'Run Demo Analysis' }}</button>
+  </div>
+
+  <div class="panel" *ngIf="mode() === 'pdf'">
+    <input id="pdfFile" class="file-input" type="file" accept=".pdf" (change)="onFileSelected($event)">
+    <label class="button primary file-label" for="pdfFile">
+      <span class="file-icon">📄</span>
+      <span>Choose PDF</span>
+    </label>
+    <span class="file-name" *ngIf="selectedFile() as f">{{ f.name }}</span>
+
+    <div class="progress" *ngIf="loading()">
+      <div class="bar" [style.width.%]="uploadProgress()"></div>
+    </div>
+    <button class="button primary" (click)="runPdfAnalysis()" [disabled]="loading()">{{ loading() ? 'Uploading…' : 'Analyze PDF' }}</button>
+  </div>
+
+  <div class="error" *ngIf="error()">{{ error() }}</div>
+
+  <div class="results" *ngIf="results() as r">
+    <div class="cards">
+      <div class="card" *ngFor="let res of r.responses">
+        <div class="card-title">{{ res.agentName }}</div>
+        <div class="card-body" [innerHTML]="renderMarkdown(res.analysis)"></div>
+      </div>
+    </div>
+  </div>
+</section>
