@@ -11,17 +11,47 @@
   </div>
 
   <div class="panel" *ngIf="mode() === 'pdf'">
-    <input id="pdfFile" class="file-input" type="file" accept=".pdf" (change)="onFileSelected($event)">
-    <label class="button primary file-label" for="pdfFile">
-      <span class="file-icon">📄</span>
-      <span>Choose PDF</span>
-    </label>
-    <span class="file-name" *ngIf="selectedFile() as f">{{ f.name }}</span>
-
-    <div class="progress" *ngIf="loading()">
-      <div class="bar" [style.width.%]="uploadProgress()"></div>
+    <!-- Login button when not authenticated -->
+    <div class="login-section" *ngIf="!isAuthenticated()">
+      <p>Sign in with Google to upload and manage your PDF files.</p>
+      <button class="button primary" (click)="login()">
+        <span>🔐 Login with Google</span>
+      </button>
     </div>
-    <button class="button primary" (click)="runPdfAnalysis()" [disabled]="loading()">{{ loading() ? 'Uploading…' : 'Analyze PDF' }}</button>
+
+    <!-- File upload when authenticated -->
+    <div class="upload-section" *ngIf="isAuthenticated()">
+      <input id="pdfFile" class="file-input" type="file" accept=".pdf" (change)="onFileSelected($event)">
+      <label class="button primary file-label" for="pdfFile">
+        <span class="file-icon">📄</span>
+        <span>Choose PDF</span>
+      </label>
+      <span class="file-name" *ngIf="selectedFile() as f">{{ f.name }}</span>
+
+      <div class="progress" *ngIf="loading()">
+        <div class="bar" [style.width.%]="uploadProgress()"></div>
+      </div>
+      <button class="button primary" (click)="runPdfUpload()" [disabled]="!selectedFile() || loading()">
+        {{ loading() ? 'Uploading…' : 'Upload PDF' }}
+      </button>
+      
+      <p class="upload-info">You can upload up to 3 PDF files (max 10MB each).</p>
+    </div>
+
+    <!-- File list when authenticated -->
+    <div class="file-list" *ngIf="isAuthenticated() && userFiles().length > 0">
+      <h3>Your Files</h3>
+      <div class="file-item" *ngFor="let file of userFiles()">
+        <span class="file-info">
+          <span class="file-icon">📄</span>
+          <span>{{ file.fileName }}</span>
+        </span>
+        <div class="file-actions">
+          <button class="button secondary small" (click)="downloadFile(file.fileName)">Download</button>
+          <button class="button danger small" (click)="deleteFile(file.fileName)">Delete</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="error" *ngIf="error()">{{ error() }}</div>

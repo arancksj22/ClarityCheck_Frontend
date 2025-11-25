@@ -196,3 +196,106 @@
   color: #2B2D42;
   opacity: 0.9;
 }
+
+.login-section {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.login-section p {
+  margin-bottom: 1.5rem;
+  color: #2B2D42;
+  font-size: 1rem;
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.upload-info {
+  font-size: 0.875rem;
+  color: #457B9D;
+  margin: 0;
+  text-align: center;
+}
+
+.file-list {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(29, 53, 87, 0.15);
+}
+
+.file-list h3 {
+  font-size: 1.125rem;
+  color: #1D3557;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.875rem;
+  margin-bottom: 0.75rem;
+  background: #FFFFFF;
+  border: 1px solid rgba(29, 53, 87, 0.12);
+  border-radius: 12px;
+  transition: box-shadow 0.2s ease;
+}
+
+.file-item:hover {
+  box-shadow: 0 4px 12px rgba(29, 53, 87, 0.08);
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2B2D42;
+  flex: 1;
+  min-width: 0;
+}
+
+.file-info span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button.small {
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+}
+
+.button.secondary {
+  background: rgba(69, 123, 157, 0.1);
+  color: #457B9D;
+  border: 1px solid rgba(69, 123, 157, 0.3);
+}
+
+.button.secondary:hover {
+  background: rgba(69, 123, 157, 0.2);
+}
+
+.button.danger {
+  background: rgba(185, 28, 28, 0.1);
+  color: #B91C1C;
+  border: 1px solid rgba(185, 28, 28, 0.3);
+}
+
+.button.danger:hover {
+  background: rgba(185, 28, 28, 0.2);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
