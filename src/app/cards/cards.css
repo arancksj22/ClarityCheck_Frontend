@@ -38,10 +38,10 @@
 }
 
 .feature-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(29, 53, 87, 0.12);
+  background: #F5F7FA;
+  border: 1px solid rgba(29, 53, 87, 0.06);
   border-radius: 18px;
-  box-shadow: 0 16px 40px rgba(29, 53, 87, 0.08);
+  box-shadow: 0 4px 16px rgba(29, 53, 87, 0.04);
   padding: 1.25rem 1.25rem 1.4rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

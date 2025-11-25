@@ -63,13 +63,13 @@
 }
 
 .panel {
-  background: rgba(245, 248, 255, 0.90);
+  background: rgba(245, 247, 250, 0.75);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(29, 53, 87, 0.15);
+  border: 1px solid rgba(29, 53, 87, 0.06);
   border-radius: 16px;
   padding: 1.1rem;
-  box-shadow: 0 15px 40px rgba(29, 53, 87, 0.08);
+  box-shadow: 0 4px 16px rgba(29, 53, 87, 0.03);
   max-width: 850px;
   width: 100%;
   box-sizing: border-box;
@@ -81,11 +81,11 @@
   width: 100%;
   max-width: 100%;
   min-height: 200px;
-  border: 1px solid rgba(29, 53, 87, 0.20);
+  border: 1px solid rgba(29, 53, 87, 0.10);
   border-radius: 12px;
   padding: 0.9rem;
   resize: vertical;
-  background: #FFFFFF;
+  background: #F5F7FA;
   color: #2B2D42;
   box-sizing: border-box;
 }
@@ -124,10 +124,10 @@
 }
 
 .card {
-  background: #FFFFFF;
-  border: 1px solid rgba(29, 53, 87, 0.12);
+  background: #F5F7FA;
+  border: 1px solid rgba(29, 53, 87, 0.06);
   border-radius: 16px;
-  box-shadow: 0 18px 45px rgba(29, 53, 87, 0.08);
+  box-shadow: 0 4px 16px rgba(29, 53, 87, 0.04);
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -209,10 +209,10 @@
   max-width: 400px;
   width: 100%;
   text-align: center;
-  background: #FFFFFF;
+  background: #F5F7FA;
   padding: 2.5rem 2rem;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(29, 53, 87, 0.1);
+  box-shadow: 0 4px 12px rgba(29, 53, 87, 0.04);
 }
 
 .google-logo {
@@ -243,17 +243,17 @@
   justify-content: center;
   gap: 0.75rem;
   padding: 0.875rem 1.75rem;
-  background: #FFFFFF;
+  background: #F5F7FA;
   color: #2B2D42;
-  border: 1px solid rgba(29, 53, 87, 0.2);
+  border: 1px solid rgba(29, 53, 87, 0.12);
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.2s ease;
 }
 
 .google-button:hover {
-  background: #F8F9FA;
-  box-shadow: 0 6px 20px rgba(29, 53, 87, 0.15);
+  background: #EDF0F4;
+  box-shadow: 0 4px 12px rgba(29, 53, 87, 0.06);
   transform: translateY(-2px);
 }
 
@@ -294,14 +294,14 @@
   align-items: center;
   padding: 0.875rem;
   margin-bottom: 0.75rem;
-  background: #FFFFFF;
-  border: 1px solid rgba(29, 53, 87, 0.12);
+  background: #F5F7FA;
+  border: 1px solid rgba(29, 53, 87, 0.06);
   border-radius: 12px;
   transition: box-shadow 0.2s ease;
 }
 
 .file-item:hover {
-  box-shadow: 0 4px 12px rgba(29, 53, 87, 0.08);
+  box-shadow: 0 2px 8px rgba(29, 53, 87, 0.04);
 }
 
 .file-info {

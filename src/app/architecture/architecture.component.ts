@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-pricing',
+  selector: 'app-architecture',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './pricing.html',
-  styleUrl: './pricing.css'
+  templateUrl: './architecture.html',
+  styleUrl: './architecture.css'
 })
-export class PricingComponent {}
+export class ArchitectureComponent {}

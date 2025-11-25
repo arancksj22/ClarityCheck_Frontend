@@ -28,8 +28,8 @@
   padding: 0.5rem 5rem 1rem;
   text-align: center;
   background:
-    radial-gradient(1200px 600px at 50% -10%, rgba(69, 123, 157, 0.80), transparent 60%),
-    linear-gradient(180deg, #F5F8FF, #FFFFFF);
+    radial-gradient(1200px 600px at 50% -10%, rgba(69, 123, 157, 0.45), transparent 70%),
+    linear-gradient(180deg, rgba(69, 123, 157, 0.08), #E8EBEF);
 }
 
 .hero h1 {
@@ -43,7 +43,7 @@
   background-clip: text;
   color: transparent;
   text-shadow: 0 6px 30px rgba(29, 53, 87, 0.08);
-  text-align: left;
+  text-align: center;
 }
 
 .hero p {
