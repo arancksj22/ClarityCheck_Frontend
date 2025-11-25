@@ -198,14 +198,68 @@
 }
 
 .login-section {
-  text-align: center;
-  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  min-height: 300px;
 }
 
-.login-section p {
-  margin-bottom: 1.5rem;
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  background: #FFFFFF;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(29, 53, 87, 0.1);
+}
+
+.google-logo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+
+.login-card h3 {
+  font-size: 1.5rem;
+  color: #1D3557;
+  margin: 0 0 0.75rem 0;
+  font-weight: 700;
+}
+
+.login-card p {
+  margin: 0 0 2rem 0;
   color: #2B2D42;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.google-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.75rem;
+  background: #FFFFFF;
+  color: #2B2D42;
+  border: 1px solid rgba(29, 53, 87, 0.2);
+  font-weight: 600;
   font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.google-button:hover {
+  background: #F8F9FA;
+  box-shadow: 0 6px 20px rgba(29, 53, 87, 0.15);
+  transform: translateY(-2px);
+}
+
+.button-logo {
+  width: 20px;
+  height: 20px;
 }
 
 .upload-section {
