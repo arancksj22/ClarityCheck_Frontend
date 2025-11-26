@@ -101,3 +101,40 @@
 }
 
 .why-card li { margin-bottom: 0.35rem; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .why-wrap {
+    margin: 1.5rem auto;
+    padding: 0 0.75rem;
+  }
+
+  .why-wrap h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .why-viewport {
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+
+  .why-card {
+    min-width: 240px;
+    padding: 1rem;
+  }
+
+  .why-card h3 {
+    font-size: 1rem;
+  }
+
+  .why-card ul {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-card {
+    min-width: 200px;
+  }
+}

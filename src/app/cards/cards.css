@@ -76,6 +76,31 @@
   line-height: 1.7;
 }
 
+@media (max-width: 768px) {
+  .cards-wrap {
+    margin: 2rem auto 0;
+    margin-bottom: 2rem;
+    padding: 0 0.75rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .feature-card {
+    padding: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 600px) {
   .icon {
     width: 52px;

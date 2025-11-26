@@ -162,4 +162,16 @@ export class DemoComponent {
     const html = marked.parse(md ?? '');
     return this.sanitizer.bypassSecurityTrustHtml(html as string);
   }
+
+  copyEmail() {
+    const email = 'arancksj@gmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+      this.showToast.set(true);
+      setTimeout(() => this.showToast.set(false), 2000);
+    }).catch(err => {
+      console.error('Failed to copy email:', err);
+    });
+  }
+
+  showToast = signal(false);
 }

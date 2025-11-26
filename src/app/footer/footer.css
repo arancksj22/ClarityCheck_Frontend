@@ -107,6 +107,35 @@
   background: linear-gradient(135deg, #457B9D, #1D3557);
 }
 
+.footer-socials .social-button {
+  border: none;
+  cursor: pointer;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, #457B9D, #1D3557);
+  color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(29, 53, 87, 0.15);
+  font-weight: 600;
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .footer-bottom {
   max-width: 1200px;
   margin: 1.25rem auto 0;
@@ -128,4 +157,49 @@
 @media (max-width: 900px) {
   .footer-container { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-socials { justify-content: flex-start; }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0.75rem 1rem;
+  }
+
+  .footer-brand .logo {
+    font-size: 1.1rem;
+  }
+
+  .footer-brand .tagline {
+    font-size: 0.9rem;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .footer-socials .social {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom .dot {
+    display: none;
+  }
+
+  .toast {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 0.75rem 0.75rem;
+  }
 }

@@ -33,7 +33,7 @@
 }
 
 .hero h1 {
-  font-size: clamp(2.8rem, 8vw, 6rem);
+  font-size: clamp(2.5rem, 7vw, 5rem);
   line-height: 1.05;
   margin-bottom: 2.5rem;
   font-weight: 700;
@@ -83,3 +83,33 @@
   margin: 0.3rem;
 }
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: 1rem 1.5rem;
+  }
+
+  .hero h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero p {
+    margin-bottom: 1.25rem;
+  }
+
+  .button {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem 1rem;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
