@@ -74,11 +74,11 @@
       <div class="file-item" *ngFor="let file of userFiles()">
         <span class="file-info">
           <span class="file-icon">📄</span>
-          <span>{{ file.fileName }}</span>
+          <span>{{ file }}</span>
         </span>
         <div class="file-actions">
-          <button class="button secondary small" (click)="downloadFile(file.fileName)">Download</button>
-          <button class="button danger small" (click)="deleteFile(file.fileName)">Delete</button>
+          <button class="button secondary small" (click)="downloadFile(file)">Download</button>
+          <button class="button danger small" (click)="deleteFile(file)">Delete</button>
         </div>
       </div>
     </div>

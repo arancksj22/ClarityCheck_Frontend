@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ApiService, BiasReport, S3File } from '../api.service';
+import { ApiService, BiasReport } from '../api.service';
 import { HttpEventType, HttpEvent } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { marked } from 'marked';
@@ -25,9 +25,14 @@ export class DemoComponent {
   
   // Authentication state
   isAuthenticated = signal<boolean>(false);
-  userFiles = signal<S3File[]>([]);
+  userFiles = signal<string[]>([]);
 
   constructor(private api: ApiService, private sanitizer: DomSanitizer) {}
+
+  ngOnInit() {
+    // Always check authentication on component load (user might have session cookie)
+    this.loadFiles();
+  }
 
   setMode(next: 'text' | 'pdf') {
     this.mode.set(next);

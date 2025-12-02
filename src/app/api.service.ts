@@ -12,12 +12,6 @@ export interface BiasReport {
   responses: AgentResponse[];
 }
 
-export interface S3File {
-  fileName: string;
-  fileSize: number;
-  uploadDate: string;
-}
-
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   private readonly baseUrl = environment.apiBaseUrl;
@@ -54,8 +48,8 @@ export class ApiService {
     });
   }
 
-  listFiles(): Observable<S3File[]> {
-    return this.http.get<S3File[]>(this.s3ListUrl, {
+  listFiles(): Observable<string[]> {
+    return this.http.get<string[]>(this.s3ListUrl, {
       withCredentials: true
     });
   }
