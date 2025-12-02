@@ -91,6 +91,41 @@
 
   <div class="error" *ngIf="error()">{{ error() }}</div>
 
+  <!-- PDF Analysis Results -->
+  <div class="results" *ngIf="pdfResults() as pdf">
+    <h2 style="text-align: center; color: #1D3557; margin-bottom: 1.5rem;">Analysis Results</h2>
+    <p style="text-align: center; color: #457B9D; margin-bottom: 1.5rem;">
+      Total chunks found: <strong>{{ pdf.total_chunks_found }}</strong>
+    </p>
+    <div class="cards">
+      <div class="card" *ngIf="pdf.ethics_chunks.length > 0">
+        <div class="card-title">Ethics Issues</div>
+        <div class="card-body">
+          <ul>
+            <li *ngFor="let chunk of pdf.ethics_chunks">{{ chunk }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" *ngIf="pdf.bias_chunks.length > 0">
+        <div class="card-title">Bias Detected</div>
+        <div class="card-body">
+          <ul>
+            <li *ngFor="let chunk of pdf.bias_chunks">{{ chunk }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" *ngIf="pdf.fallacy_chunks.length > 0">
+        <div class="card-title">Logical Fallacies</div>
+        <div class="card-body">
+          <ul>
+            <li *ngFor="let chunk of pdf.fallacy_chunks">{{ chunk }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Text Analysis Results -->
   <div class="results" *ngIf="results() as r">
     <div class="cards">
       <div class="card" *ngFor="let res of r.responses">

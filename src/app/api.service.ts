@@ -12,6 +12,13 @@ export interface BiasReport {
   responses: AgentResponse[];
 }
 
+export interface AnalysisResponse {
+  ethics_chunks: string[];
+  bias_chunks: string[];
+  fallacy_chunks: string[];
+  total_chunks_found: number;
+}
+
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   private readonly baseUrl = environment.apiBaseUrl;

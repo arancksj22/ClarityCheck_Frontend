@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ApiService, BiasReport } from '../api.service';
+import { ApiService, BiasReport, AnalysisResponse } from '../api.service';
 import { HttpEventType, HttpEvent } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { marked } from 'marked';
@@ -22,6 +22,7 @@ export class DemoComponent {
   uploadProgress = signal<number>(0);
   error = signal<string | null>(null);
   results = signal<BiasReport | null>(null);
+  pdfResults = signal<AnalysisResponse | null>(null);
   
   // Authentication state
   isAuthenticated = signal<boolean>(false);
@@ -38,6 +39,7 @@ export class DemoComponent {
     this.mode.set(next);
     this.error.set(null);
     this.results.set(null);
+    this.pdfResults.set(null);
     this.uploadProgress.set(0);
     
     // Load files when switching to PDF mode
@@ -107,6 +109,7 @@ export class DemoComponent {
     this.loading.set(true);
     this.error.set(null);
     this.uploadProgress.set(0);
+    this.pdfResults.set(null);
 
     this.api.uploadPdf(file).subscribe({
       next: (event: HttpEvent<any>) => {
@@ -116,6 +119,12 @@ export class DemoComponent {
         } else if (event.type === HttpEventType.Response) {
           this.loading.set(false);
           this.selectedFile.set(null);
+          
+          // Capture and display analysis results
+          if (event.body) {
+            this.pdfResults.set(event.body as AnalysisResponse);
+          }
+          
           this.loadFiles(); // Refresh file list
           
           // Reset file input
